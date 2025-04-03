@@ -12,7 +12,7 @@ import { Input } from './ui/input';
 
 export const Chat = () => {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: 'api/langchain',
+    api: 'api/chat-with-history',
     onError: (e) => {
       toast.error('エラーが発生しました');
       console.log(e);
