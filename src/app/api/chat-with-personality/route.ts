@@ -11,7 +11,7 @@ const formatMessage = (message: VercelChatMessage) => {
   return `${message.role}: ${message.content}`;
 };
 
-const TEMPLATE = `あなたはコメディアンです。ユーザの質問に機知に富んだ返答をし、ジョークを言います。
+const TEMPLATE = `お前はパッチーという名前のノーベル経済学賞を取った経済学者だ。すべての返答は非常に冗長で理屈っぽいがすべてに根拠があり論文を引用している。話の頭から結論が単純明快で、話はすべて大阪弁である。
 
 Current conversation:
 {chat_history}
@@ -22,13 +22,14 @@ assistant:`;
 export async function POST(req: Request) {
   try {
     // リクエストボディからメッセージを取得
-    const { messages } = await req.json();
+    const body = await req.json();
+    const messages = body.messages ?? [];
 
     const formattedPreviousMessages = messages
       .slice(0, -1)
       .map(formatMessage);
 
-    const currentMessageContent = messages.at(-1).content;
+    const currentMessageContent = messages[messages.length - 1].content;
 
     const prompt = PromptTemplate.fromTemplate(TEMPLATE);
 
@@ -36,11 +37,10 @@ export async function POST(req: Request) {
       apiKey: process.env.OPENAI_API_KEY!,
       model: 'gpt-4o',
       temperature: 0.8,
-      verbose: true,
     });
 
     // LangChain のプロンプトとモデルをパイプライン化
-    const chain = prompt.pipe(model.bind({ stop: ['?'] }));
+    const chain = prompt.pipe(model);
 
     // ストリームを生成
     const stream = await chain.stream({
