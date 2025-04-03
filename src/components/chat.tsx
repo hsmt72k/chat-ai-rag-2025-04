@@ -10,9 +10,9 @@ export const Chat = () => {
       {messages.map((message) => (
         <div
           key={message.id}
-          className="whitespace-pre-wrap"
+          className="whitespace-pre-wrap mb-2"
         >
-          {message.role === 'user' ? 'User: ' : 'AI: '}
+          {message.role === 'user' ? 'あなた: ' : 'AI: '}
           {message.parts.map((part, i) => {
             switch (part.type) {
               case 'text':
