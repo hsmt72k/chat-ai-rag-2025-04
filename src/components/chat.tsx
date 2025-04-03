@@ -3,6 +3,7 @@
 import { useChat } from '@ai-sdk/react';
 import { SendHorizontalIcon } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import { toast } from 'sonner';
 
 import { cn } from '@/lib/utils';
 
@@ -10,7 +11,13 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 
 export const Chat = () => {
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: 'api/chat',
+    onError: (e) => {
+      toast.error('エラーが発生しました');
+      console.log(e);
+    },
+  });
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

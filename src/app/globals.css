@@ -55,6 +55,10 @@ body {
   font-family: var(--font-host-grotesk), sans-serif;
 }
 
+.custom-toast {
+  margin-top: 48px;
+}
+
 :root {
   --radius: 0.625rem;
   --card: oklch(1 0 0);
