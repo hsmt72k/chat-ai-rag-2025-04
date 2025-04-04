@@ -4,9 +4,6 @@ import { Message as VercelChatMessage, LangChainAdapter } from 'ai';
 
 export const runtime = 'edge';
 
-/**
- * 基本的なメモリフォーマッタで、メッセージ履歴を文字列化してモデルに直接渡す
- */
 const formatMessage = (message: VercelChatMessage) => {
   return `${message.role}: ${message.content}`;
 };
@@ -21,7 +18,6 @@ assistant:`;
 
 export async function POST(req: Request) {
   try {
-    // リクエストボディからメッセージを取得
     const { messages } = await req.json();
 
     const formattedPreviousMessages = messages
@@ -39,24 +35,13 @@ export async function POST(req: Request) {
       verbose: true,
     });
 
-    // LangChain のプロンプトとモデルをパイプライン化
     const chain = prompt.pipe(model.bind({ stop: ['?'] }));
 
-    // ストリームを生成
     const stream = await chain.stream({
       chat_history: formattedPreviousMessages.join('\n'),
       input: currentMessageContent,
     });
 
-    // 動作確認用：ここでログ出力してしまうと、ストリームを消費してしまうため、
-    // レスポンスとして返すストリームは空になってしまう
-    // for await (const chunk of stream) {
-    //   if (chunk?.content) {
-    //     console.log(chunk.content);
-    //   }
-    // }
-
-    // AI SDK の LangChainAdapter を使用してストリームレスポンスを返却
     return LangChainAdapter.toDataStreamResponse(stream);
   } catch (error) {
     if (error instanceof Error) {

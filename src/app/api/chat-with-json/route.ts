@@ -15,7 +15,7 @@ const loader = new JSONLoader('src/data/city.json', [
   '/city_emblem_image',
 ]);
 
-export const dynamic = 'force-dynamic';
+export const runtime = 'node';
 
 const formatMessage = (message: VercelChatMessage) => {
   return `${message.role}: ${message.content}`;
