@@ -1,0 +1,137 @@
+[
+  {
+    "city": "名古屋市",
+    "slug": "nagoya",
+    "han": "尾張",
+    "mayor": "広沢一郎",
+    "area_code": "052",
+    "population": "2331413",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Emblem_of_Nagoya%2C_Aichi.svg"
+  },
+  {
+    "city": "横浜市",
+    "slug": "yokohama",
+    "han": "武蔵",
+    "mayor": "林文子",
+    "area_code": "045",
+    "population": "3764821",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Emblem_of_Yokohama%2C_Kanagawa.svg"
+  },
+  {
+    "city": "広島市",
+    "slug": "hiroshima",
+    "han": "安芸",
+    "mayor": "松井一実",
+    "area_code": "082",
+    "population": "1178206",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Emblem_of_Hiroshima%2C_Hiroshima.svg"
+  },
+  {
+    "city": "札幌市",
+    "slug": "sapporo",
+    "han": "石狩",
+    "mayor": "秋元克広",
+    "area_code": "011",
+    "population": "1953569",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/1/11/Emblem_of_Sapporo%2C_Hokkaido.svg"
+  },
+  {
+    "city": "仙台市",
+    "slug": "sendai",
+    "han": "陸奥",
+    "mayor": "郡和子",
+    "area_code": "022",
+    "population": "1093813",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Emblem_of_Sendai%2C_Miyagi.svg"
+  },
+  {
+    "city": "千葉市",
+    "slug": "chiba",
+    "han": "下総",
+    "mayor": "熊谷俊人",
+    "area_code": "043",
+    "population": "984023",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/3/39/Emblem_of_Chiba%2C_Chiba.svg"
+  },
+  {
+    "city": "川崎市",
+    "slug": "kawasaki",
+    "han": "武蔵",
+    "mayor": "福田紀彦",
+    "area_code": "044",
+    "population": "1550182",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E5%B7%9D%E5%B4%8E%E5%B8%82%E5%B8%82%E7%AB%A0.svg"
+  },
+  {
+    "city": "さいたま市",
+    "slug": "saitama",
+    "han": "武蔵",
+    "mayor": "清水勇人",
+    "area_code": "048",
+    "population": "1350919",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/1/17/Emblem_of_Saitama%2C_Saitama.svg"
+  },
+  {
+    "city": "堺市",
+    "slug": "sakai",
+    "han": "泉州",
+    "mayor": "竹山修身",
+    "area_code": "072",
+    "population": "804684",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Emblem_of_Sakai%2C_Osaka.svg"
+  },
+  {
+    "city": "神戸市",
+    "slug": "kobe",
+    "han": "播磨",
+    "mayor": "久元喜造",
+    "area_code": "078",
+    "population": "1487586",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Emblem_of_Kobe%2C_Hyogo.svg"
+  },
+  {
+    "city": "京都市",
+    "slug": "kyoto",
+    "han": "山城",
+    "mayor": "門川大作",
+    "area_code": "075",
+    "population": "1431969",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/8/83/Emblem_of_Kyoto%2C_Kyoto.svg"
+  },
+  {
+    "city": "福岡市",
+    "slug": "fukuoka",
+    "han": "筑前",
+    "mayor": "高島宗一郎",
+    "area_code": "092",
+    "population": "1658999",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Emblem_of_Fukuoka%2C_Fukuoka.svg"
+  },
+  {
+    "city": "北九州市",
+    "slug": "kitakyushu",
+    "han": "豊前",
+    "mayor": "北橋健治",
+    "area_code": "093",
+    "population": "904461",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Emblem_of_Kitakyushu%2C_Fukuoka.svg"
+  },
+  {
+    "city": "広島市",
+    "slug": "hiroshima",
+    "han": "安芸",
+    "mayor": "松井一実",
+    "area_code": "082",
+    "population": "1178206",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Emblem_of_Hiroshima%2C_Hiroshima.svg"
+  },
+  {
+    "city": "岡山市",
+    "slug": "okayama",
+    "han": "備前",
+    "mayor": "大森雅夫",
+    "area_code": "086",
+    "population": "711284",
+    "city_emblem_image": "https://upload.wikimedia.org/wikipedia/commons/4/46/Emblem_of_Okayama%2C_Okayama.svg"
+  }
+]

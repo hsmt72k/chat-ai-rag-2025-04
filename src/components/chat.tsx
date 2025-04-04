@@ -2,6 +2,7 @@
 
 import { useChat } from '@ai-sdk/react';
 import { SendHorizontalIcon } from 'lucide-react';
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { toast } from 'sonner';
 
@@ -24,6 +25,40 @@ export const Chat = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  const getAnswer = (messageId: string, value: string, index: number) => {
+    const imageMarkdownLinkRegex = /!\[([^\]]*)\]\((https?:\/\/[^\)]+)\)/g;
+    const matches = [];
+    let match;
+
+    while ((match = imageMarkdownLinkRegex.exec(value)) !== null) {
+      matches.push(match);
+    }
+
+    if (matches.length > 0) {
+      const imageElements = matches.map((m, index) => (
+        <div key={index}>
+          <Image
+            src={m[2]}
+            alt={m[1] || 'image'}
+            width={128}
+            height={128}
+            className="p-4"
+          />
+        </div>
+      ));
+
+      const nonImageText = value.replace(imageMarkdownLinkRegex, '');
+
+      return (
+        <div key={`${messageId}-${index}`}>
+          <p>{nonImageText}</p>
+          {imageElements}
+        </div>
+      );
+    }
+    return <div key={`${messageId}-${index}`}>{value}</div>;
+  };
+
   return (
     <div className="mt-2 flex flex-col w-full max-w-2xl h-full mx-auto gap-2 bg-zinc-900 overflow-hidden">
       <div className="flex flex-col flex-1 overflow-y-auto mb-18">
@@ -45,7 +80,7 @@ export const Chat = () => {
             {message.parts.map((part, i) => {
               switch (part.type) {
                 case 'text':
-                  return <div key={`${message.id}-${i}`}>{part.text}</div>;
+                  return getAnswer(message.id, part.text, i);
               }
             })}
           </div>
