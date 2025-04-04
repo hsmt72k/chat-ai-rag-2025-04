@@ -50,13 +50,24 @@ export const Chat = () => {
       const nonImageText = value.replace(imageMarkdownLinkRegex, '');
 
       return (
-        <div key={`${messageId}-${index}`}>
-          <p>{nonImageText}</p>
+        <div
+          key={`${messageId}-${index}`}
+          className="break-words overflow-hidden"
+        >
+          <p style={{ overflowWrap: 'anywhere' }}>{nonImageText}</p>
           {imageElements}
         </div>
       );
     }
-    return <div key={`${messageId}-${index}`}>{value}</div>;
+
+    return (
+      <div
+        key={`${messageId}-${index}`}
+        className="break-words overflow-hidden"
+      >
+        <p style={{ overflowWrap: 'anywhere' }}>{value}</p>
+      </div>
+    );
   };
 
   return (
